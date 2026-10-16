@@ -358,18 +358,24 @@ def kpi(col, label, value, note="", delay=0.0, fill=None, featured=False, tone=N
 
 
 # ======================= APP =======================
-st.set_page_config(page_title='IPL Bowlers Analytics', page_icon='🏏', layout='wide')
+# ======================= APP =======================
+# ======================= APP =======================
+st.set_page_config(
+    page_title="IPL Bowlers Analytics",
+    page_icon="🏏",
+    layout="wide"
+)
 
-PROJECT_DIR = Path(__file__).resolve().parent
-DB_CANDIDATES = [
-    PROJECT_DIR / 'dashboard' / 'data' / 'ipl.db',
-    PROJECT_DIR / 'data' / 'ipl.db',
-    PROJECT_DIR / 'ipl.db',
-    Path('dashboard/data/ipl.db'),
-    Path('data/ipl.db'),
-    Path('ipl.db')
-]
-DB_PATH = next((p for p in DB_CANDIDATES if p.exists()), DB_CANDIDATES[0])
+PROJECT_DIR = Path(
+    r"C:\Users\jumab\Documents\ipl-cricket-analytics"
+)
+
+DB_PATH = PROJECT_DIR / "data" / "raw" / "ipl.db"
+
+if not DB_PATH.exists():
+    st.error(f"Database not found: {DB_PATH}")
+    st.stop()
+
 inject_theme()
 
 
