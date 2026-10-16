@@ -359,8 +359,12 @@ def kpi(col, label, value, note="", delay=0.0, fill=None, featured=False, tone=N
 
 # ======================= APP =======================
 st.set_page_config(page_title='IPL Bowlers Analytics', page_icon='🏏', layout='wide')
-PROJECT_DIR = Path(__file__).resolve().parent.parent
-DB_CANDIDATES = [PROJECT_DIR/'data'/'ipl.db', PROJECT_DIR/'data'/'raw'/'ipl.db']
+
+PROJECT_DIR = Path(r'C:\Users\jumab\Documents\ipl-cricket-analytics')
+DB_CANDIDATES = [
+    PROJECT_DIR / 'data' / 'ipl.db',
+    PROJECT_DIR / 'data' / 'raw' / 'ipl.db'
+]
 DB_PATH = next((p for p in DB_CANDIDATES if p.exists()), DB_CANDIDATES[0])
 
 inject_theme()
