@@ -366,9 +366,7 @@ st.set_page_config(
     layout="wide"
 )
 
-PROJECT_DIR = Path(
-    r"C:\Users\jumab\Documents\ipl-cricket-analytics"
-)
+PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 DB_PATH = PROJECT_DIR / "data" / "raw" / "ipl.db"
 
