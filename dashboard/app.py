@@ -362,9 +362,10 @@ st.set_page_config(page_title='IPL Bowlers Analytics', page_icon='🏏', layout=
 
 PROJECT_DIR = Path(__file__).resolve().parent
 DB_CANDIDATES = [
+    PROJECT_DIR / 'dashboard' / 'data' / 'ipl.db',
     PROJECT_DIR / 'data' / 'ipl.db',
-    PROJECT_DIR / 'data' / 'raw' / 'ipl.db',
     PROJECT_DIR / 'ipl.db',
+    Path('dashboard/data/ipl.db'),
     Path('data/ipl.db'),
     Path('ipl.db')
 ]
